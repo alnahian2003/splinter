@@ -1,0 +1,41 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Inter", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+    Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+}
+
+html,
+body {
+  min-height: 100%;
+  font-size: 16px;
+}
+
+/* Global Variables */
+:root {
+  /* Gradient Background Color */
+  --bg: linear-gradient(130deg, #ad90c1 0%, rgb(3, 0, 84) 100%),
+    linear-gradient(130deg, #09007b 0%, rgba(15, 0, 66, 0) 30%),
+    linear-gradient(129.96deg, rgb(255, 47, 47) 10.43%, rgb(0, 4, 96) 92.78%),
+    radial-gradient(
+      100% 246.94% at 100% 0%,
+      rgb(255, 255, 255) 0%,
+      rgba(37, 0, 66, 0.8) 100%
+    ),
+    linear-gradient(121.18deg, rgb(20, 0, 255) 0.45%, rgb(27, 0, 62) 100%),
+    linear-gradient(154.03deg, rgb(206, 0, 0) 0%, rgb(255, 0, 61) 74.04%),
+    linear-gradient(341.1deg, rgb(178, 91, 186) 7.52%, rgb(16, 0, 119) 77.98%),
+    linear-gradient(222.34deg, rgb(169, 0, 0) 12.99%, rgb(0, 255, 224) 87.21%),
+    linear-gradient(150.76deg, rgb(183, 213, 0) 15.35%, rgb(34, 0, 170) 89.57%),
+    no-repeat;
+
+  /* Gradient Background Blend Mode */
+  --bg-blend: overlay, normal, overlay, color-burn, screen, overlay, difference,
+    difference, normal;
+}
+
+/* body {
+  background: var(--bg);
+  background-blend-mode: var(--bg-blend);
+} */
