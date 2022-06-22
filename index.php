@@ -32,7 +32,7 @@ date_default_timezone_set("Asia/Dhaka");
     <!-- INTER Google Font CDN -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@200;400;600&display=swap" rel="stylesheet">
 
     <title>Splinter — TODO List Web App</title>
 </head>
@@ -42,12 +42,12 @@ date_default_timezone_set("Asia/Dhaka");
     <header>
         <div id="intro">
             <h1>SPLINTER</h1>
-            <h3>TODO List Web App</h3>
+            <h2>TODO List Web App</h2>
         </div>
 
         <div id="todoForm">
             <form action="index.php" method="POST">
-                <input type="text" name="title" id="todo_title" placeholder="start writing your todo task">
+                <input type="text" name="title" id="todo_title" placeholder="start writing your todo task" required>
 
                 <input type="text" name="details" id="todo_details" placeholder="don't miss out to write the details, please!">
                 <button type="submit">+</button>
