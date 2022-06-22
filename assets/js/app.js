@@ -3,20 +3,48 @@ $(document).ready(function () {
 
   let submitBtn = $("#submitBtn");
 
+  let todo = $("#todo");
+
+  function loadTodo() {
+    $.ajax({
+      type: "GET",
+      url: "read.php",
+      dataType: "html",
+      success: function (response) {
+        todo.html(response);
+      },
+    });
+  }
+
+  loadTodo();
+
+  toastr.options = {
+    closeButton: true,
+    debug: false,
+    newestOnTop: false,
+    progressBar: false,
+    positionClass: "toast-bottom-right",
+    preventDuplicates: false,
+    onclick: null,
+    showDuration: "300",
+    newestOnTop: true,
+    hideDuration: "1000",
+    timeOut: "5000",
+    extendedTimeOut: "1000",
+    showEasing: "swing",
+    hideEasing: "linear",
+    showMethod: "fadeIn",
+    hideMethod: "fadeOut",
+  };
+
+  // Make the AJAX Request on Form Submit
   $(submitBtn).on("click", function (e) {
     e.preventDefault();
 
     let title = $("#todo_title").val();
     let details = $("#todo_details").val();
 
-    // Validate the form inputs
-    // if (title == "" && details == "") {
-    //   alert("Please fill out all fields to make a TODO");
-    //   return false;
-    // } elseif(title==""){
-    //     alert("You can't only input the details. You have to submit a title");
-    //     return false;
-    // }
+    // validate
 
     $.ajax({
       type: "POST",
@@ -28,9 +56,31 @@ $(document).ready(function () {
       dataType: "html",
       success: function (response) {
         if (response == 1) {
-          $("#intro h1").html("TODO Added To DB");
+          toastr.success("TODO Added Successfully");
+          loadTodo();
         } else {
-          $("#intro h1").html("Something Was Wrong");
+          toastr.error("Something Was Wrong!");
+        }
+      },
+    });
+  });
+
+  // Make an AJAX Request for Deleting a TODO
+  $(document).on("click", ".btn_delete", function () {
+    let todoId = $(this).data("id");
+    let element = this;
+
+    $.ajax({
+      type: "POST",
+      url: "delete.php",
+      data: { id: todoId },
+      dataType: "html",
+      success: function (response) {
+        if (response == 1) {
+          toastr.success("TODO Deleted");
+          loadTodo();
+        } else {
+          toastr.error("Couldn't Delete");
         }
       },
     });
