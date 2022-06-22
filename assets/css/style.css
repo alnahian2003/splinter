@@ -10,6 +10,7 @@ html,
 body {
   min-height: 100%;
   font-size: 16px;
+  background: var(--bg-secondary);
 }
 
 /* Global Variables */
@@ -39,6 +40,48 @@ body {
 
   --white: #ffffff;
   --light-white: rgba(255, 255, 255, 0.5);
+
+  --muted-bg: #00000015;
+  --text-muted: #aeaeae;
+
+  /* Body Text Colors */
+  --text-primary: #353535;
+  --text-secondary: #505050;
+
+  /* Action Button Hover Colors */
+  --bg-finished: #00c187;
+  --bg-delete: #ff002e;
+
+  /* Todo Cards Number Colors */
+  --blue: #0d6efd;
+  --blue-bg: #0d6efd20;
+
+  --indigo: #6610f2;
+  --indigo-bg: #6610f220;
+
+  --purple: #6f42c1;
+  --purple-bg: #6f42c120;
+
+  --pink: #ff0099;
+  --pink-bg: #ff009920;
+
+  --red: #ff002e;
+  --red-bg: #ff002e20;
+
+  --orange: #fd7e14;
+  --orange-bg: #fd7e1420;
+
+  --yellow: #ffc107;
+  --yellow-bg: #ffc10720;
+
+  --green: #198754;
+  --green-bg: #19875420;
+
+  --teal: #00c187;
+  --teal-bg: #00c18720;
+
+  --cyan: #0dccf2;
+  --cyan-bg: #0dccf220;
 }
 
 /* body {
@@ -84,7 +127,6 @@ header #todoForm form {
   justify-content: center;
   align-items: center;
   gap: 40px;
-  width: 100%;
 }
 
 header #todoForm form input[type="text"] {
@@ -111,6 +153,7 @@ header #todoForm form input[type="text"]::placeholder {
   font-style: italic;
 }
 
+/* Form Submit Button Styling */
 header #todoForm form button {
   background: none;
   border: 0.3pt solid var(--light-white); /*hairline border*/
@@ -126,4 +169,185 @@ header #todoForm form button:hover {
   border: 0.3pt solid var(--white);
   color: var(--white);
   transition: 0.3s ease;
+}
+
+/* Main Section Styling */
+main {
+  padding: 6rem 8px;
+  max-width: 1140px;
+  margin: 0 auto;
+}
+
+/* Main Section Heading */
+main h2 {
+  font-size: 32px;
+  font-weight: 600;
+  margin-bottom: 60px;
+  color: var(--text-primary);
+}
+
+/* Todo Cards Grid */
+main #todo {
+  display: grid;
+  gap: 16px;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+}
+
+/* Todo Card */
+main #todo .todo_card {
+  background: var(--white);
+  border-radius: 10px;
+  padding: 28px 16px;
+
+  display: flex;
+  flex-flow: column;
+  gap: 12px;
+}
+
+main #todo .todo_card .card_top {
+  display: flex;
+  flex-flow: row;
+  justify-content: space-between;
+}
+
+main #todo .todo_card .card_top .card_number {
+  color: var(--text-secondary);
+  background-color: var(--muted-bg);
+  height: 2rem;
+  width: 2rem;
+  text-align: center;
+  font-size: 15px;
+  border-radius: 100%;
+  font-weight: 600;
+  display: flex;
+  flex-flow: row;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Card Top Number Colors */
+main #todo .todo_card:nth-child(odd) .card_top .card_number {
+  color: var(--blue);
+  background-color: var(--blue-bg);
+}
+
+main #todo .todo_card:nth-child(even) .card_top .card_number {
+  color: var(--purple);
+  background-color: var(--purple-bg);
+}
+
+main #todo .todo_card:nth-child(3n) .card_top .card_number {
+  color: var(--orange);
+  background-color: var(--orange-bg);
+}
+
+main #todo .todo_card:nth-child(4n) .card_top .card_number {
+  color: var(--pink);
+  background-color: var(--pink-bg);
+}
+
+main #todo .todo_card:nth-child(5n) .card_top .card_number {
+  color: var(--teal);
+  background-color: var(--teal-bg);
+}
+
+main #todo .todo_card:nth-child(6n) .card_top .card_number {
+  color: var(--indigo);
+  background-color: var(--indigo-bg);
+}
+
+main #todo .todo_card:nth-child(7n) .card_top .card_number {
+  color: var(--green);
+  background-color: var(--green-bg);
+}
+
+main #todo .todo_card:nth-child(8n) .card_top .card_number {
+  color: var(--red);
+  background-color: var(--red-bg);
+}
+
+main #todo .todo_card:nth-child(9n) .card_top .card_number {
+  color: var(--text-primary);
+  background-color: var(--muted-bg);
+}
+
+main #todo .todo_card:nth-child(10n) .card_top .card_number {
+  color: var(--cyan);
+  background-color: var(--cyan-bg);
+}
+
+main #todo .todo_card:nth-child(11n) .card_top .card_number {
+  color: var(--yellow);
+  background-color: var(--yellow-bg);
+}
+
+/* Card Action Buttons */
+main #todo .todo_card .card_top .action_buttons {
+  display: flex;
+  flex-flow: row;
+  gap: 12px;
+}
+
+main #todo .todo_card .card_top .action_buttons .btn {
+  color: var(--text-secondary);
+  background-color: var(--muted-bg);
+  height: 2rem;
+  width: 2rem;
+  text-align: center;
+  border-radius: 100%;
+  display: flex;
+  flex-flow: row;
+  justify-content: center;
+  align-items: center;
+  border: none;
+  cursor: pointer;
+}
+
+/* Hover State on Action Buttons */
+main #todo .todo_card .card_top .action_buttons .btn.btn_finished:hover {
+  background-color: var(--bg-finished);
+  transition: 0.3s ease;
+  color: #ffffff !important;
+}
+
+main #todo .todo_card .card_top .action_buttons .btn.btn_delete:hover {
+  background-color: var(--bg-delete);
+  transition: 0.3s ease;
+  color: #ffffff !important;
+}
+
+/* Todo Card Center Items Styles  */
+main #todo .todo_card .card_center {
+  display: flex;
+  flex-flow: column;
+  gap: 12px;
+}
+
+main #todo .todo_card .card_center h4 {
+  font-size: 20px;
+  color: var(--text-primary);
+  font-weight: 600;
+
+  /* Truncate */
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+main #todo .todo_card .card_center p {
+  font-size: 16px;
+  color: var(--text-secondary);
+  font-weight: normal;
+  line-height: 130%;
+}
+
+/* Todo Card Bottom Styles */
+
+main #todo .todo_card .card_bottom {
+  text-align: right;
+  font-style: italic;
+  font-size: 14px;
+  font-weight: 400;
+  color: var(--text-muted);
+  margin-top: 1rem;
 }
