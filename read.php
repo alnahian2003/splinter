@@ -48,7 +48,7 @@ foreach ($todos as $todo) :
 
         <!-- Card Bottom: Todo Date -->
         <div class="card_bottom">
-            <p><?= date("d h:i, d M, Y", strtotime($todo->createdAt)); ?></p>
+            <p><?= date("h:i A | D, d M, Y", strtotime($todo->createdAt)); ?></p>
         </div>
     </div>
 
