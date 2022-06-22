@@ -46,11 +46,12 @@ require_once("functions.php");
         </div>
 
         <div id="todoForm">
-            <form action="index.php" method="POST">
+            <form action="index.php" method="POST" id="splinterForm">
                 <input type="text" name="title" id="todo_title" placeholder="start writing your todo task" required>
 
                 <input type="text" name="details" id="todo_details" placeholder="don't miss out to write the details, please!">
-                <button type="submit">+</button>
+
+                <button id="submitBtn" type="submit">+</button>
             </form>
         </div>
     </header>
