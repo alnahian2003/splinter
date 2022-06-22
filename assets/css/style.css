@@ -93,7 +93,6 @@ body {
 header {
   background: var(--bg);
   background-blend-mode: var(--bg-blend);
-  /* min-height: 300px; */
   color: white;
   padding: 6rem 8px;
 
@@ -190,8 +189,8 @@ main h2 {
 main #todo {
   display: grid;
   gap: 16px;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  /* Change repeat(auto-fit) to repeat(3) for big screens */
+  grid-template-columns: repeat(3, minmax(300px, 1fr));
+  /* Change repeat(3) to repeat(auto-fit) for smaller screens */
 }
 
 /* Todo Card */
@@ -342,9 +341,9 @@ main #todo .todo_card .card_center h4 {
   font-weight: 600;
 
   /* Truncate */
-  white-space: nowrap;
+  /* white-space: nowrap;
   overflow: hidden;
-  text-overflow: ellipsis;
+  text-overflow: ellipsis; */
 }
 
 main #todo .todo_card .card_center p {
