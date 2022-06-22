@@ -14,7 +14,7 @@
 date_default_timezone_set("Asia/Dhaka");
 
 // Require Functions.php
-// require_once("functions.php");
+require_once("functions.php");
 
 ?>
 
