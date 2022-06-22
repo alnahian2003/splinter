@@ -1,3 +1,3 @@
 # Splinter Preview
 
-![Preview](assets/img/screenshot.png)
+![Preview](assets/img/screenshot.jpg)
