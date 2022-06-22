@@ -3,7 +3,7 @@
 require_once("db.php");
 
 // Create the db query
-$stmt = $db->prepare("SELECT * from todo ORDER BY id DESC");
+$stmt = $db->prepare("SELECT * from todo");
 
 $stmt->execute();
 

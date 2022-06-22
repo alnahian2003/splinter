@@ -45,6 +45,10 @@ $(document).ready(function () {
     let details = $("#todo_details").val();
 
     // validate
+    if ((title.length || details.length) == 0 || title.length == 0) {
+      toastr.error("You must write something!");
+      return false;
+    }
 
     $.ajax({
       type: "POST",
@@ -57,7 +61,8 @@ $(document).ready(function () {
       success: function (response) {
         if (response == 1) {
           toastr.success("TODO Added Successfully");
-          loadTodo();
+          loadTodo(); // load the todo grid section
+          form.trigger("reset"); // reset the form
         } else {
           toastr.error("Something Was Wrong!");
         }
@@ -78,7 +83,7 @@ $(document).ready(function () {
         dataType: "html",
         success: function (response) {
           if (response == 1) {
-            toastr.success("TODO Finished");
+            toastr.success("Congrats! TODO Completed");
             loadTodo();
           } else {
             toastr.error("Couldn't Process");
@@ -94,7 +99,7 @@ $(document).ready(function () {
         dataType: "html",
         success: function (response) {
           if (response == 1) {
-            toastr.info("TODO Unfinished");
+            toastr.warning("TODO Unfinished");
             loadTodo();
           } else {
             toastr.error("Couldn't Process");
