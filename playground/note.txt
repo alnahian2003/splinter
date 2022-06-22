@@ -1,1 +1,0 @@
-I have to work and practice with json more and more. This project can be completed easily with MySQL. But with JSON, it might be interesting. however, I'm going for mysql 
