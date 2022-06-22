@@ -363,6 +363,8 @@ require_once("functions.php");
         </div>
     </main>
 
+    <!-- JQuery 3.6.0 Minified -->
+    <script src="assets/js/jquery.js"></script>
     <!-- Main JavaScript -->
     <script src="assets/js/app.js"></script>
 </body>
