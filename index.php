@@ -29,6 +29,9 @@ require_once("functions.php");
     <!-- Main Stylesheet -->
     <link rel="stylesheet" href="assets/css/style.css">
 
+    <!-- Toastr Stylesheet CDN-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/css/toastr.min.css">
+
     <!-- INTER Google Font CDN -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -366,6 +369,8 @@ require_once("functions.php");
 
     <!-- JQuery 3.6.0 Minified -->
     <script src="assets/js/jquery.js"></script>
+    <!-- Toastr Minified -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/js/toastr.min.js"></script>
     <!-- Main JavaScript -->
     <script src="assets/js/app.js"></script>
 </body>
