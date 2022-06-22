@@ -3,7 +3,7 @@
 require_once("db.php");
 
 // Create the db query
-$stmt = $db->prepare("SELECT * from todo");
+$stmt = $db->prepare("SELECT * from todo ORDER BY id DESC");
 
 $stmt->execute();
 
@@ -11,7 +11,10 @@ $todos = $stmt->fetchAll();
 
 $totalRows = $stmt->rowCount();
 
+$i = 0;
+
 foreach ($todos as $todo) :
+    $i++;
 ?>
 
     <!-- Todo Card -->
@@ -19,7 +22,7 @@ foreach ($todos as $todo) :
         <!-- Card Top: Todo Number, Action Buttons -->
         <div class="card_top">
             <p class="card_number">
-                <?= $todo->id; ?>
+                <?= $i; ?>
             </p>
             <div class="action_buttons">
                 <button class="btn btn_finished" data-id="<?= $todo->id; ?>">
