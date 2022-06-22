@@ -6,7 +6,7 @@ require_once("db.php");
 
 $id = htmlspecialchars($_POST["id"]);
 // Create the db query
-$stmt = $db->prepare("UPDATE todo SET status = 1 WHERE id = $id");
+$stmt = $db->prepare("UPDATE todo SET status = 0 WHERE id = $id");
 
 if ($stmt->execute()) {
     echo 1;

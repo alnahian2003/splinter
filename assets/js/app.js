@@ -65,10 +65,50 @@ $(document).ready(function () {
     });
   });
 
+  // Update a TODO Status to Finished
+  $(document).on("click", ".btn_finished", function () {
+    let todoId = $(this).data("id");
+    let isFinished = $(this).data("status");
+
+    if (!isFinished) {
+      $.ajax({
+        type: "POST",
+        url: "markDone.php",
+        data: { id: todoId },
+        dataType: "html",
+        success: function (response) {
+          if (response == 1) {
+            toastr.success("TODO Finished");
+            loadTodo();
+          } else {
+            toastr.error("Couldn't Process");
+            loadTodo();
+          }
+        },
+      });
+    } else {
+      $.ajax({
+        type: "POST",
+        url: "markNotDone.php",
+        data: { id: todoId },
+        dataType: "html",
+        success: function (response) {
+          if (response == 1) {
+            toastr.info("TODO Unfinished");
+            loadTodo();
+          } else {
+            toastr.error("Couldn't Process");
+            loadTodo();
+          }
+        },
+      });
+    }
+    isFinished = !isFinished;
+  });
+
   // Make an AJAX Request for Deleting a TODO
   $(document).on("click", ".btn_delete", function () {
     let todoId = $(this).data("id");
-    let element = this;
 
     $.ajax({
       type: "POST",

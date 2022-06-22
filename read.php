@@ -9,8 +9,6 @@ $stmt->execute();
 
 $todos = $stmt->fetchAll();
 
-$totalRows = $stmt->rowCount();
-
 $i = 0;
 
 foreach ($todos as $todo) :
@@ -18,14 +16,14 @@ foreach ($todos as $todo) :
 ?>
 
     <!-- Todo Card -->
-    <div class="todo_card">
+    <div class="todo_card <?= ($todo->status == 1) ? "finished" : ""; ?>">
         <!-- Card Top: Todo Number, Action Buttons -->
         <div class="card_top">
             <p class="card_number">
                 <?= $i; ?>
             </p>
             <div class="action_buttons">
-                <button class="btn btn_finished" data-id="<?= $todo->id; ?>">
+                <button class="btn btn_finished <?= ($todo->status == 1) ? "active" : ""; ?>" data-status="<?= $todo->status; ?>" data-id="<?= $todo->id; ?>">
                     <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-check-lg" viewBox="0 0 16 16">
                         <path d="M12.736 3.97a.733.733 0 0 1 1.047 0c.286.289.29.756.01 1.05L7.88 12.01a.733.733 0 0 1-1.065.02L3.217 8.384a.757.757 0 0 1 0-1.06.733.733 0 0 1 1.047 0l3.052 3.093 5.4-6.425a.247.247 0 0 1 .02-.022Z" />
                     </svg>

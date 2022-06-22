@@ -191,6 +191,7 @@ main #todo {
   display: grid;
   gap: 16px;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  /* Change repeat(auto-fit) to repeat(3) for big screens */
 }
 
 /* Todo Card */
@@ -208,6 +209,12 @@ main #todo .todo_card {
   overflow-wrap: break-word;
 
   box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
+}
+
+/* Special Status: TODO FINISHED */
+main #todo .todo_card.finished * {
+  filter: opacity(0.6);
+  text-decoration: line-through;
 }
 
 main #todo .todo_card .card_top {
