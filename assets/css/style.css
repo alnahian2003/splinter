@@ -197,7 +197,7 @@ main #todo {
 main #todo .todo_card {
   background: var(--white);
   border-radius: 10px;
-  padding: 28px 16px;
+  padding: 20px 16px;
 
   display: flex;
   flex-flow: column;
