@@ -328,6 +328,14 @@ main #todo .todo_card .card_top .action_buttons .btn.btn_delete:hover {
   color: #ffffff !important;
 }
 
+/* Focus State on Buttons */
+main #todo .todo_card .card_top .action_buttons .btn:active,
+main #todo .todo_card .card_top .action_buttons .btn:focus {
+  -webkit-box-shadow: inset 0px 0px 5px #c1c1c1;
+  -moz-box-shadow: inset 0px 0px 5px #c1c1c1;
+  box-shadow: inset 0px 0px 5px #c1c1c1;
+}
+
 /* Todo Card Center Items Styles  */
 main #todo .todo_card .card_center {
   display: flex;
