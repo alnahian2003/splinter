@@ -94,7 +94,7 @@ header {
   background: var(--bg);
   background-blend-mode: var(--bg-blend);
   color: white;
-  padding: 6rem 8px;
+  padding: 6rem 2rem;
 
   display: flex;
   flex-flow: column;
@@ -172,7 +172,7 @@ header #todoForm form button:hover {
 
 /* Main Section Styling */
 main {
-  padding: 6rem 8px;
+  padding: 6rem 2rem;
   max-width: 1140px;
   margin: 0 auto;
 }
@@ -370,4 +370,113 @@ main #todo .todo_card .card_bottom {
   font-weight: 400;
   color: var(--text-muted);
   /* margin-top: 1rem; */
+}
+
+/*    Responsive Codes     */
+/* Small devices */
+@media (max-width: 430px) {
+  header {
+    padding: 6rem 1rem !important;
+  }
+  header #intro h1 {
+    font-size: xx-large !important;
+  }
+  header #intro h2 {
+    font-size: large !important;
+  }
+
+  header #todoForm {
+    min-width: 100% !important;
+    max-width: 100% !important;
+  }
+
+  header #todoForm form input[type="text"] {
+    font-size: 1rem !important;
+  }
+
+  header #todoForm form input[type="text"]::placeholder {
+    font-size: 14px !important;
+  }
+
+  header #todoForm form input[type="text"]:nth-child(2) {
+    width: initial !important;
+  }
+
+  header #todoForm form button {
+    font-size: 30px !important;
+    height: 60px !important;
+    width: 60px !important;
+  }
+
+  main {
+    padding: 4rem 1rem !important;
+    max-width: 100% !important;
+    min-width: 100% !important;
+  }
+
+  main h2 {
+    font-size: x-large !important;
+  }
+
+  main #todo {
+    grid-template-columns: 1fr !important;
+  }
+
+  main #todo .todo_card .card_center h4 {
+    font-size: 18px !important;
+  }
+
+  main #todo .todo_card .card_center p {
+    font-size: 1rem !important;
+  }
+}
+
+@media (max-width: 767px) {
+  header {
+    padding: 6rem 2rem;
+  }
+  header #intro h1 {
+    font-size: xxx-large;
+  }
+  header #intro h2 {
+    font-size: large;
+  }
+
+  header #todoForm {
+    min-width: 50%;
+    width: 400px;
+    max-width: 100%;
+  }
+
+  header #todoForm form input[type="text"] {
+    font-size: 1.2rem;
+  }
+
+  header #todoForm form input[type="text"]::placeholder {
+    font-size: 1.2rem;
+  }
+
+  header #todoForm form button {
+    font-size: 30px;
+    height: 60px;
+    width: 60px;
+  }
+
+  main {
+    padding: 4rem 2rem;
+  }
+  main #todo {
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  }
+}
+
+/* Medium devices (tablets, 768px and up) */
+@media (max-width: 1000px) {
+  main {
+    padding: 6rem 2rem;
+    max-width: 960px;
+  }
+  main #todo {
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  }
 }
