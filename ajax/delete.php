@@ -1,7 +1,7 @@
 <?php
 
 // Require the database connection file
-require_once("db.php");
+require_once(dirname(__DIR__) . "/db.php");
 
 $id = htmlspecialchars($_POST["id"]);
 

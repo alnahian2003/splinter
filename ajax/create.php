@@ -1,6 +1,6 @@
 <?php
 // Require the database connection file
-require_once("db.php");
+require_once(dirname(__DIR__) . "/db.php");
 
 $title = htmlspecialchars(trim($_POST["title"]));
 $details = htmlspecialchars(trim($_POST["details"]));
