@@ -8,7 +8,7 @@ $(document).ready(function () {
   function loadTodo() {
     $.ajax({
       type: "GET",
-      url: "read.php",
+      url: "ajax/read.php",
       dataType: "html",
       success: function (response) {
         todo.html(response);
@@ -52,7 +52,7 @@ $(document).ready(function () {
 
     $.ajax({
       type: "POST",
-      url: "create.php",
+      url: "ajax/create.php",
       data: {
         title: title,
         details: details,
@@ -78,7 +78,7 @@ $(document).ready(function () {
     if (!isFinished) {
       $.ajax({
         type: "POST",
-        url: "markDone.php",
+        url: "ajax/markDone.php",
         data: { id: todoId },
         dataType: "html",
         success: function (response) {
@@ -94,7 +94,7 @@ $(document).ready(function () {
     } else {
       $.ajax({
         type: "POST",
-        url: "markNotDone.php",
+        url: "ajax/markNotDone.php",
         data: { id: todoId },
         dataType: "html",
         success: function (response) {
@@ -117,7 +117,7 @@ $(document).ready(function () {
 
     $.ajax({
       type: "POST",
-      url: "delete.php",
+      url: "ajax/delete.php",
       data: { id: todoId },
       dataType: "html",
       success: function (response) {
