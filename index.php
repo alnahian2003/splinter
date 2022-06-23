@@ -46,9 +46,9 @@ date_default_timezone_set("Asia/Dhaka");
 
         <div id="todoForm">
             <form action="index.php" method="POST" id="splinterForm">
-                <input type="text" name="title" id="todo_title" placeholder="start writing your todo task" required maxlength="58">
+                <input type="text" name="title" id="todo_title" placeholder="start writing your todo task" required maxlength="65">
 
-                <input type="text" name="details" id="todo_details" placeholder="don't miss out to write the details, please!" maxlength="70">
+                <input type="text" name="details" id="todo_details" placeholder="don't miss out to write the details, please!" maxlength="130">
 
                 <button id="submitBtn" type="submit">+</button>
             </form>
