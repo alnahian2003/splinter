@@ -47,7 +47,7 @@ $(document).ready(function () {
 
     // validate
     if (title.length == 0 && details.length == 0) {
-      toastr.warning("Oh Dear! You have to write something! 😛");
+      toastr.error("Oh Dear! You have to write something! 😛");
       return false;
     } else if (details.length != 0 && title.length == 0) {
       toastr.error("Sweet, Now write a title 😚");
@@ -67,7 +67,7 @@ $(document).ready(function () {
           loadTodo(); // load the todo grid section
           form.trigger("reset"); // reset the form
         } else {
-          toastr.error("Something Went Wrong! ⚠");
+          toastr.error("Something Went Wrong! 😵");
         }
       },
     });
@@ -89,7 +89,7 @@ $(document).ready(function () {
             toastr.success("Congrats! ToDo Completed 🥳");
             loadTodo();
           } else {
-            toastr.error("Couldn't Updated ToDo ☹");
+            toastr.error("Couldn't Update Your ToDo 😭");
             loadTodo();
           }
         },
@@ -102,7 +102,7 @@ $(document).ready(function () {
         dataType: "html",
         success: function (response) {
           if (response == 1) {
-            toastr.warning("Uh Oh! ToDo Incompleted 🙁");
+            toastr.warning("Uh Oh! ToDo Not Finished Yet 🙁");
             loadTodo();
           } else {
             toastr.error("Couldn't Process The Action 😢");
