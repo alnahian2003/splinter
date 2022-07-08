@@ -1,9 +1,5 @@
 <?php
-// Define Database Variables
-define("DB_HOST", "localhost");
-define("DB_USER", "root");
-define("DB_NAME", "splinter");
-define("DB_PASSWORD", "");
+require_once "config.php";
 
 // Set DSN (Data Source Name)
 $dsn = "mysql:host=" . DB_HOST . ";dbname=" . DB_NAME;

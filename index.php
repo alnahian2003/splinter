@@ -9,9 +9,6 @@
 
  * Author Portfolio: https://alnahian2003.github.io
  */
-
-// Set Default Time Zone
-date_default_timezone_set("Asia/Dhaka");
 ?>
 
 <!DOCTYPE html>
