@@ -262,6 +262,10 @@ main #todo .todo_card .card_top .card_number {
   flex-flow: row;
   justify-content: center;
   align-items: center;
+  user-select: none;
+  -ms-user-select: none;
+  -moz-user-select: none;
+  -webkit-user-select: none;
 }
 
 /* Card Top Number Colors */
