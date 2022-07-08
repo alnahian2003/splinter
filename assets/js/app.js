@@ -16,13 +16,15 @@ $(document).ready(function () {
     showDuration: "300",
     newestOnTop: true,
     hideDuration: "1000",
-    timeOut: "5000",
+    timeOut: "3000",
     extendedTimeOut: "1000",
     showEasing: "swing",
     hideEasing: "linear",
     showMethod: "fadeIn",
     hideMethod: "fadeOut",
+    progressBar: true,
   };
+  toastr.info("Howdy, Welcome To Splinter!");
 
   function loadTodo() {
     $.ajax({
@@ -59,7 +61,7 @@ $(document).ready(function () {
       dataType: "html",
       success: function (response) {
         if (response == 1) {
-          toastr.success("ToDo Created For You 😀");
+          toastr.info("ToDo Created For You 😀");
           loadTodo(); // load the todo grid section
           form.trigger("reset"); // reset the form
         } else {
