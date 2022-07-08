@@ -60,11 +60,11 @@ $(document).ready(function () {
       dataType: "html",
       success: function (response) {
         if (response == 1) {
-          toastr.success("TODO Added Successfully");
+          toastr.success("To Do Added ✔");
           loadTodo(); // load the todo grid section
           form.trigger("reset"); // reset the form
         } else {
-          toastr.error("Something Was Wrong!");
+          toastr.error("Something Went Wrong! ⚠");
         }
       },
     });
@@ -83,10 +83,10 @@ $(document).ready(function () {
         dataType: "html",
         success: function (response) {
           if (response == 1) {
-            toastr.success("Congrats! TODO Completed");
+            toastr.success("Congrats! To Do Completed 🥳");
             loadTodo();
           } else {
-            toastr.error("Couldn't Process");
+            toastr.error("Couldn't Updated To Do ☹");
             loadTodo();
           }
         },
@@ -99,10 +99,10 @@ $(document).ready(function () {
         dataType: "html",
         success: function (response) {
           if (response == 1) {
-            toastr.warning("TODO Unfinished");
+            toastr.warning("To Do Marked Unfinished ‼");
             loadTodo();
           } else {
-            toastr.error("Couldn't Process");
+            toastr.error("Couldn't Process The Action 😢");
             loadTodo();
           }
         },
@@ -122,10 +122,10 @@ $(document).ready(function () {
       dataType: "html",
       success: function (response) {
         if (response == 1) {
-          toastr.success("TODO Deleted");
+          toastr.success("To Do Deleted Successfully 🤩");
           loadTodo();
         } else {
-          toastr.error("Couldn't Delete");
+          toastr.error("Couldn't Delete Your To Do 😢");
         }
       },
     });
