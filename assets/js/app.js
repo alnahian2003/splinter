@@ -24,7 +24,7 @@ $(document).ready(function () {
     hideMethod: "fadeOut",
     progressBar: true,
   };
-  toastr.info("Howdy, Welcome To Splinter!");
+  toastr.info("Howdy, Welcome To Splinter! 👋");
 
   function loadTodo() {
     $.ajax({
@@ -46,11 +46,13 @@ $(document).ready(function () {
     let details = $("#todo_details").val();
 
     // validate
-    if ((title.length || details.length) == 0 || title.length == 0) {
-      toastr.error("You must write something!");
+    if (title.length == 0 && details.length == 0) {
+      toastr.warning("Oh Dear! You have to write something! 😛");
+      return false;
+    } else if (details.length != 0 && title.length == 0) {
+      toastr.error("Sweet, Now write a title 😚");
       return false;
     }
-
     $.ajax({
       type: "POST",
       url: "ajax/create.php",
