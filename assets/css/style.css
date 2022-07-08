@@ -211,7 +211,7 @@ main #todo .todo_card {
 }
 
 /* Special Status: TODO FINISHED */
-main #todo .todo_card.finished * {
+main #todo .todo_card .card_center.finished * {
   filter: opacity(0.6);
   text-decoration: line-through;
 }
@@ -220,6 +220,12 @@ main #todo .todo_card .card_top {
   display: flex;
   flex-flow: row;
   justify-content: space-between;
+}
+
+/* Show Button Active Status if the Task Marked Completed */
+main #todo .todo_card .card_top .action_buttons .btn_finished.active {
+  color: #00c187;
+  background-color: #00c18720;
 }
 
 main #todo .todo_card .card_top .card_number {

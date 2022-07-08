@@ -5,23 +5,10 @@ $(document).ready(function () {
 
   let todo = $("#todo");
 
-  function loadTodo() {
-    $.ajax({
-      type: "GET",
-      url: "ajax/read.php",
-      dataType: "html",
-      success: function (response) {
-        todo.html(response);
-      },
-    });
-  }
-
-  loadTodo();
-
   toastr.options = {
-    closeButton: true,
+    closeButton: false,
     debug: false,
-    newestOnTop: false,
+    newestOnTop: true,
     progressBar: false,
     positionClass: "toast-bottom-right",
     preventDuplicates: false,
@@ -36,6 +23,18 @@ $(document).ready(function () {
     showMethod: "fadeIn",
     hideMethod: "fadeOut",
   };
+
+  function loadTodo() {
+    $.ajax({
+      type: "GET",
+      url: "ajax/read.php",
+      dataType: "html",
+      success: function (response) {
+        todo.html(response);
+      },
+    });
+  }
+  loadTodo();
 
   // Make the AJAX Request on Form Submit
   $(submitBtn).on("click", function (e) {
@@ -60,7 +59,7 @@ $(document).ready(function () {
       dataType: "html",
       success: function (response) {
         if (response == 1) {
-          toastr.success("To Do Added ✔");
+          toastr.success("ToDo Created For You 😀");
           loadTodo(); // load the todo grid section
           form.trigger("reset"); // reset the form
         } else {
@@ -83,10 +82,10 @@ $(document).ready(function () {
         dataType: "html",
         success: function (response) {
           if (response == 1) {
-            toastr.success("Congrats! To Do Completed 🥳");
+            toastr.success("Congrats! ToDo Completed 🥳");
             loadTodo();
           } else {
-            toastr.error("Couldn't Updated To Do ☹");
+            toastr.error("Couldn't Updated ToDo ☹");
             loadTodo();
           }
         },
@@ -99,7 +98,7 @@ $(document).ready(function () {
         dataType: "html",
         success: function (response) {
           if (response == 1) {
-            toastr.warning("To Do Marked Unfinished ‼");
+            toastr.warning("Uh Oh! ToDo Incompleted 🙁");
             loadTodo();
           } else {
             toastr.error("Couldn't Process The Action 😢");
@@ -122,10 +121,10 @@ $(document).ready(function () {
       dataType: "html",
       success: function (response) {
         if (response == 1) {
-          toastr.success("To Do Deleted Successfully 🤩");
+          toastr.success("ToDo Deleted Successfully 🤩");
           loadTodo();
         } else {
-          toastr.error("Couldn't Delete Your To Do 😢");
+          toastr.error("Couldn't Delete Your ToDo 😢");
         }
       },
     });

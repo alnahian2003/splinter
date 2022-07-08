@@ -16,7 +16,7 @@ foreach ($todos as $todo) :
 ?>
 
     <!-- Todo Card -->
-    <div class="todo_card <?= ($todo->status == 1) ? "finished" : ""; ?>" title="<?= $todo->title; ?>">
+    <div class="todo_card" title="<?= $todo->title; ?>">
         <!-- Card Top: Todo Number, Action Buttons -->
         <div class="card_top">
             <p class="card_number">
@@ -40,7 +40,7 @@ foreach ($todos as $todo) :
         </div>
 
         <!-- Card Center: Todo Title, Todo Details -->
-        <div class="card_center">
+        <div class="card_center <?= ($todo->status == 1) ? "finished" : ""; ?>">
             <h4><?= $todo->title;  ?></h4>
             <?php if (!empty($todo->details)) {
                 echo "<p>" . $todo->details . "</p>";
