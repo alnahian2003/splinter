@@ -9,7 +9,6 @@ $(document).ready(function () {
     closeButton: false,
     debug: false,
     newestOnTop: true,
-    progressBar: false,
     positionClass: "toast-bottom-right",
     preventDuplicates: false,
     onclick: null,
@@ -24,7 +23,6 @@ $(document).ready(function () {
     hideMethod: "fadeOut",
     progressBar: true,
   };
-  toastr.info("Howdy, Welcome To Splinter! 👋");
 
   function loadTodo() {
     $.ajax({
